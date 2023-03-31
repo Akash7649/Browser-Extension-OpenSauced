@@ -1,0 +1,19 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.img {
+  padding: 2em;
+}
+
+.link_to_profile {
+  color: #888;
+}
+
+.App {
+  text-align: center;
+  min-width: 350px;
+}
