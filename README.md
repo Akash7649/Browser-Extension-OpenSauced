@@ -1,5 +1,5 @@
  # Browser Extension - OpenSauced CraftWork 
-***
+ 
 ![open_readme](https://user-images.githubusercontent.com/101036630/229164112-f10b5b27-30e1-4fff-ae4f-dea188d17bbd.jpg)
 
 <h3 align="center">By Akash Singh</h3>
