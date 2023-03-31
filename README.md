@@ -43,8 +43,8 @@
 
 # Resources
 
-- ##### api.opensauced.pizz
-- #####  [docs.opensauced.pizza](docs.opensauced.pizza)
+- ##### [api.opensauced.pizza](https://api.opensauced.pizza)
+- #####  [docs.opensauced.pizza](https://docs.opensauced.pizza)
 - ##### [https://github.com/open-sauced/assets](https://github.com/open-sauced/assets)
 - ##### [crxjs](https://crxjs.dev/)
 - ##### [vite](https://vitejs.dev/)
