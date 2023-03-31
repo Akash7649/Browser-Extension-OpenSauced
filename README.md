@@ -30,7 +30,7 @@
 
 | GitHub Screen |
 | ------ |
-| ![bdougie1](https://user-images.githubusercontent.com/101036630/229165471-9315916b-5f16-49c3-b2e2-65be4cf23a32.png) |
+| ![bdougie](https://user-images.githubusercontent.com/101036630/229165776-7ed06a7e-5705-4840-a703-3332a56d5a46.png) |
 
 
 | Browser Extension Screen |
