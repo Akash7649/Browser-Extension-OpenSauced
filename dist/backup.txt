@@ -1,0 +1,177 @@
+function appendButton() {
+  const editProfileButton1 = document.querySelector('.js-profile-editable-edit-button');
+  const editProfileButton2 = document.querySelector('input.btn-block');
+  if (editProfileButton1) {
+    const newButton = document.createElement('button');
+    newButton.textContent = 'View on OpenSauced';
+    newButton.classList.add('btn', 'btn-primary','btn-block', 'my-3');
+    editProfileButton1.insertAdjacentElement('afterend', newButton);
+  }
+  else if(editProfileButton2)
+  {
+    const newButton = document.createElement('button');
+    newButton.textContent = 'View on OpenSauced';
+    newButton.classList.add('btn', 'btn-primary','btn-block', 'my-3');
+    editProfileButton2.insertAdjacentElement('afterend', newButton);    
+  }
+  else {
+    console.log('Could not find "Edit Profile" button');
+  }
+}
+
+
+
+
+//manifest.json
+{
+  "manifest_version": 3,
+  "name": "OpenSauced Profile Checker",
+  "description": "Check if a GitHub user has an OpenSauced profile.",
+  "version": "1.0.0",
+  "icons":{
+    "16":"icon.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "icon.png"
+    }
+  },  
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "tabs",
+  "storage"
+  ],
+  "host_permissions": [
+    "*://github.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://github.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "service-worker-loader.js",
+    "type": "module"
+  },  
+  "web_accessible_resources": [
+    {
+      "use_dynamic_url": true,
+      "matches": [
+        "*://github.com/*"
+      ],
+      "resources": [
+        "**/*",
+        "*"
+      ]
+    }
+  ]
+}
+
+
+//contentScript.js
+function appendButton() {
+  const myProfileButton = document.querySelector('.js-profile-editable-edit-button');
+  const othersProfileButton = document.querySelector('input.btn-block');
+  if (myProfileButton) {
+    const openSaucedButton = document.createElement('button');
+    openSaucedButton.textContent = 'View on OpenSauced';
+    openSaucedButton.classList.add('btn', 'btn-primary','btn-block', 'my-3');
+    myProfileButton.insertAdjacentElement('afterend', openSaucedButton);
+  }
+  else if(othersProfileButton)
+  {
+    const openSaucedButton = document.createElement('button');
+    openSaucedButton.textContent = 'View on OpenSauced';
+    openSaucedButton.classList.add('btn', 'btn-primary','btn-block', 'my-3');
+    othersProfileButton.insertAdjacentElement('afterend', openSaucedButton);    
+  }
+  else {
+    console.log('Could not find "Edit Profile" button');
+  }
+}
+
+function checkOpenSaucedProfile(username) {
+  fetch(`https://api.opensauced.pizza/v1/users/${username}`)
+    .then(response => {
+      if (response.status === 200) {
+        // The user has an OpenSauced profile, so add a button to the page
+        appendButton();
+      }
+    })
+    .catch(error => console.error(error));
+}
+
+
+function open()
+{
+const url = window.location.href;
+const match = url.match(/github\.com\/([^/]+)/);
+
+if (match) {
+  const username = match[1];
+  checkOpenSaucedProfile(username);
+}
+}
+
+open();
+
+
+
+// readme.md
+
+# Browser Extension - OpenSauced CraftWork 
+***
+Img
+By Akash Singh E
+
+## Assignment
+***
+
+#### Create a browser extension that connects [OpenSauced](https://api.opensauced.pizza) to a github.com profile.
+
+
+## Assignment Expectations 
+****
+
+- ##### To create an OpenSauced account by connecting your GitHub to [opensauced.pizza](https://insights.opensauced.pizza) - (Satisfied)
+- ##### To generate a [vite](https://vitejs.dev/) powered browser extension using the [CRXJS](https://crxjs.dev/vite-plugin/getting-started/react/create-project) guide. Note there are two versions, vite@3 is in beta but both will work fine for this assignment - (Satisfied)
+- ##### To connect your localhost power extension to your browser and not deploying this to               production or any browser store - (Satisfied)
+- ##### To write a function that validates if an OpenSauced user account exists (using the                OpenSauced API) for a GitHub user profile while viewing them on github.com - (Satisfied)
+
+## Tech Stacks
+***
+stacks
+
+
+
+
+
+
+
+
+
+## Output Screens 
+***
+
+| GitHub Screen |
+| ------ |
+| Img |
+
+
+| Browser Extension Screen |
+| ------ |
+| Img |
+
+| Popup Screen |
+| ------ |
+| Img |
+
+## Resources
+***
+
+    
+
+
