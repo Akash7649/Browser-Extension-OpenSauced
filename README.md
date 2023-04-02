@@ -2,7 +2,7 @@
  
 ![open_readme](https://user-images.githubusercontent.com/101036630/229164112-f10b5b27-30e1-4fff-ae4f-dea188d17bbd.jpg)
 
-<h3>[By Akash Singh](https://github.com/Akash7649)</h3>
+<h3>By Akash Singh</h3>
 
 # Assignment
 
